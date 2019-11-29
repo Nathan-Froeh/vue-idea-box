@@ -1,17 +1,27 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <Form/>
+    <NewIdea v-on:add-idea='addIdea'/>
   </div>
 </template>
 
 <script>
-import Form from './components/Form';
+import NewIdea from './components/NewIdea';
 
 export default {
   name: 'app',
   components: {
-    Form
+    NewIdea
+  },
+  data() {
+    return {
+      ideas: []
+    }
+  },
+  methods: {
+    addIdea(idea) {
+      this.ideas.push(idea)
+    }
   }
 }
 </script>
