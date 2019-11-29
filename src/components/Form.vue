@@ -1,7 +1,11 @@
 <template>
-  <section id="form">
-
-  <section/>
+  <div id="form">
+    <form action="">
+      <input type="text"/>
+      <input type="text"/>
+      <input type="submit" value="submit">
+    </form>
+  </div>
 </template>
 
 <script>
