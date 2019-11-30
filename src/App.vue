@@ -2,7 +2,7 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <NewIdea v-on:add-idea='addIdea'/>
-    <IdeaContainer ideas='ideas'/>
+    <IdeaContainer v-bind:ideas='ideas'/>
   </div>
 </template>
 
@@ -18,7 +18,7 @@ export default {
   },
   data() {
     return {
-      ideas: []
+      ideas: [{title: 'hi', body: 'sup', id: 1}]
     }
   },
   methods: {
