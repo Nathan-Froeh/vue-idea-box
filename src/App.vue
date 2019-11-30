@@ -2,16 +2,19 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <NewIdea v-on:add-idea='addIdea'/>
+    <IdeaContainer ideas='ideas'/>
   </div>
 </template>
 
 <script>
 import NewIdea from './components/NewIdea';
+import IdeaContainer from './components/IdeaContainer';
 
 export default {
   name: 'app',
   components: {
-    NewIdea
+    NewIdea,
+    IdeaContainer
   },
   data() {
     return {
