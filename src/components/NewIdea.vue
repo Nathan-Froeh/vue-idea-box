@@ -1,6 +1,6 @@
 <template>
   <div class="form">
-    <form  v-on:submit.prevent="$emit('add-idea', {title, id, body})">
+    <form  v-on:submit.prevent="$emit('add-idea', submitIdea())">
       <input type="text" id='title' v-model='title' v-on:change='handleChange'/>
       <input type="text" id='body' v-model='body' v-on:change='handleChange'/>
       <input type="submit">
@@ -15,8 +15,7 @@ export default {
   data() {
     return {
       title: 'the title',
-      body: 'the body',
-      id: uuid.v4()
+      body: 'the body'
     }
   },
   methods: {
@@ -27,7 +26,7 @@ export default {
       const idea = {
         title: this.title,
         body: this.body,
-        id: this.id
+        id: uuid.v4()
       }
       return idea
     }

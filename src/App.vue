@@ -2,7 +2,7 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <NewIdea v-on:add-idea='addIdea'/>
-    <IdeaContainer v-bind:ideas='ideas'/>
+    <IdeaContainer v-bind:ideas='ideas' v-on:delete-idea="deleteIdea"/>
   </div>
 </template>
 
@@ -24,6 +24,11 @@ export default {
   methods: {
     addIdea(idea) {
       this.ideas.push(idea)
+    },
+    deleteIdea(id) {
+      const stuff = this.ideas.filter(idea => idea.id !== id)
+      this.ideas = stuff
+      console.log(stuff)
     }
   }
 }
